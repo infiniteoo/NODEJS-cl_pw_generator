@@ -6,6 +6,8 @@ A command line application built with Node.js to generate random passwords calle
 
 ### Example
 
+![example_gif](./example.gif)
+
 ## Options
 
 | Short | Long              | Description                     |
