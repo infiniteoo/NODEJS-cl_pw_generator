@@ -2,6 +2,7 @@ const program = require("commander");
 const log = console.log;
 const createPassword = require("./utils/createPassword");
 const chalk = require("chalk");
+const clipboardy = require("clipboardy");
 
 program.version("1.0.0").description("Simple Password Generator");
 
@@ -18,5 +19,9 @@ const { length, save, numbers, symbols } = program.opts();
 
 const generatedPassword = createPassword(length, numbers, symbols);
 
+// copy to clipboard
+clipboardy.writeSync(generatedPassword);
+
 // output generated password
 log(chalk.blue("Generated Password: ") + chalk.bold(generatedPassword));
+log(chalk.yellow("Password copied to clipboard!"));
